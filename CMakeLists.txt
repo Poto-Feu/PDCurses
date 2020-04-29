@@ -22,3 +22,5 @@ add_library(pdcurses STATIC
     ${SRC_HEADERS}
     ${SRC_WINCON}
     ${SRC_WINCON_H})
+
+add_definitions(-DPDC_WIDE -DPDC_FORCE_UTF8)
