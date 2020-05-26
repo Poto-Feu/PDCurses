@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.0)
 
 project(PDCurses)
 
+set(CMAKE_C_STANDARD 90)
+
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Release")
 endif()
@@ -17,7 +19,7 @@ file(GLOB SRC_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 file(GLOB SRC_WINCON ${CMAKE_CURRENT_SOURCE_DIR}/wincon/*.c)
 file(GLOB SRC_WINCON_H ${CMAKE_CURRENT_SOURCE_DIR}/wincon/*.h)
 
-add_library(pdcurses STATIC
+add_library(pdcurses SHARED
     ${SRC_PDCURSES}
     ${SRC_HEADERS}
     ${SRC_WINCON}
